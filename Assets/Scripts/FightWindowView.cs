@@ -20,6 +20,7 @@ public class FightWindowView : MonoBehaviour
     [SerializeField] private Button _minusPowerButton;
 
     [SerializeField] private Button _fightButton;
+    [SerializeField] private Button _passByButton;
 
     private Enemy _enemy;
     private Money _money;
@@ -51,6 +52,7 @@ public class FightWindowView : MonoBehaviour
         _minusPowerButton.onClick.AddListener(() => ChangePower(false));
 
         _fightButton.onClick.AddListener(Fight);
+        _passByButton.onClick.AddListener(PassBy);
     }
 
     private void OnDestroy()
@@ -69,6 +71,11 @@ public class FightWindowView : MonoBehaviour
         _money.Detach(_enemy);
         _health.Detach(_enemy);
         _power.Detach(_enemy);
+    }
+
+    private void PassBy()
+    {
+        Debug.Log("You walked by");
     }
 
     private void Fight()
@@ -127,5 +134,10 @@ public class FightWindowView : MonoBehaviour
         }
 
         _countPowerEnemy.text = $"Enemy power: {_enemy.Power}";
+
+        if (_allCountPowerPlayer <= 2)
+            _passByButton.gameObject.SetActive(true);
+        else
+            _passByButton.gameObject.SetActive(false);
     }
 }
