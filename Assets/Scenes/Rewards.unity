@@ -817,28 +817,28 @@ MonoBehaviour:
   _timeDeadline: 172800
   _rewards:
   - RewardType: 0
-    Sprite: {fileID: 0}
+    Sprite: {fileID: 21300000, guid: e0eac6b76fdd842e88a7f8c75ecffaf4, type: 3}
     CountCurrency: 100
   - RewardType: 1
-    Sprite: {fileID: 0}
+    Sprite: {fileID: 21300000, guid: f59401c5c79564fd1ae3bfb0876455a7, type: 3}
     CountCurrency: 100
   - RewardType: 0
-    Sprite: {fileID: 0}
+    Sprite: {fileID: 21300000, guid: e0eac6b76fdd842e88a7f8c75ecffaf4, type: 3}
     CountCurrency: 200
   - RewardType: 1
-    Sprite: {fileID: 0}
+    Sprite: {fileID: 21300000, guid: f59401c5c79564fd1ae3bfb0876455a7, type: 3}
     CountCurrency: 200
   - RewardType: 0
-    Sprite: {fileID: 0}
+    Sprite: {fileID: 21300000, guid: e0eac6b76fdd842e88a7f8c75ecffaf4, type: 3}
     CountCurrency: 300
   - RewardType: 1
-    Sprite: {fileID: 0}
+    Sprite: {fileID: 21300000, guid: f59401c5c79564fd1ae3bfb0876455a7, type: 3}
     CountCurrency: 300
   - RewardType: 0
-    Sprite: {fileID: 0}
+    Sprite: {fileID: 21300000, guid: e0eac6b76fdd842e88a7f8c75ecffaf4, type: 3}
     CountCurrency: 400
   - RewardType: 1
-    Sprite: {fileID: 0}
+    Sprite: {fileID: 21300000, guid: f59401c5c79564fd1ae3bfb0876455a7, type: 3}
     CountCurrency: 400
   _timerNewReward: {fileID: 633142895}
   _mountRootSlotsReward: {fileID: 1204896340}
