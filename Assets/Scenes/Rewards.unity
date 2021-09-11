@@ -414,6 +414,7 @@ GameObject:
   - component: {fileID: 554042608}
   - component: {fileID: 554042607}
   - component: {fileID: 554042606}
+  - component: {fileID: 554042610}
   m_Layer: 5
   m_Name: Currency Window
   m_TagString: Untagged
@@ -480,7 +481,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!224 &554042609
 RectTransform:
@@ -496,13 +497,27 @@ RectTransform:
   - {fileID: 899833673174813025}
   - {fileID: 1441323376}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &554042610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 554042605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e408a6869dd75849ad1cf6ff5031772, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _currenCountWood: {fileID: 899833673174813026}
+  _currenCountDiamond: {fileID: 1441323377}
 --- !u!1 &633142893
 GameObject:
   m_ObjectHideFlags: 0
@@ -637,6 +652,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 633142893}
   m_CullTransparentMesh: 1
+--- !u!1 &664194541
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 664194543}
+  - component: {fileID: 664194542}
+  m_Layer: 0
+  m_Name: InstalView
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &664194542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 664194541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1812a0fed39d820428f3df03a8348524, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dailyRewardView: {fileID: 843005692}
+--- !u!4 &664194543
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 664194541}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 464.98038, y: 237.27377, z: -78.02401}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &843005687
 GameObject:
   m_ObjectHideFlags: 0
@@ -649,6 +708,7 @@ GameObject:
   - component: {fileID: 843005690}
   - component: {fileID: 843005689}
   - component: {fileID: 843005688}
+  - component: {fileID: 843005692}
   m_Layer: 5
   m_Name: Daily Reward Window
   m_TagString: Untagged
@@ -734,13 +794,58 @@ RectTransform:
   - {fileID: 1722436251}
   - {fileID: 633142894}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &843005692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 843005687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66eac6fb031c1ed41a7cd9e4f9541cc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _timeCooldown: 86400
+  _timeDeadline: 172800
+  _rewards:
+  - RewardType: 0
+    Sprite: {fileID: 0}
+    CountCurrency: 100
+  - RewardType: 1
+    Sprite: {fileID: 0}
+    CountCurrency: 100
+  - RewardType: 0
+    Sprite: {fileID: 0}
+    CountCurrency: 200
+  - RewardType: 1
+    Sprite: {fileID: 0}
+    CountCurrency: 200
+  - RewardType: 0
+    Sprite: {fileID: 0}
+    CountCurrency: 300
+  - RewardType: 1
+    Sprite: {fileID: 0}
+    CountCurrency: 300
+  - RewardType: 0
+    Sprite: {fileID: 0}
+    CountCurrency: 400
+  - RewardType: 1
+    Sprite: {fileID: 0}
+    CountCurrency: 400
+  _timerNewReward: {fileID: 633142895}
+  _mountRootSlotsReward: {fileID: 1204896340}
+  _containerRewardSlotView: {fileID: 975942480124542375, guid: 02be4b569b6a8684599951e52c7c14d7,
+    type: 3}
+  _getRewardButton: {fileID: 469712913}
+  _resetButton: {fileID: 1722436252}
 --- !u!1 &926220485
 GameObject:
   m_ObjectHideFlags: 0
@@ -966,7 +1071,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &1204896339
 GameObject:
@@ -1179,6 +1284,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1441323375}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1441323377 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8850501028898796178, guid: 5414e28d7261a2546841b2e3641b228a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1441323375}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1722436250
 GameObject:
   m_ObjectHideFlags: 0
@@ -1500,7 +1617,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &899833673174813024
 PrefabInstance:
@@ -1627,3 +1744,15 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 899833673174813024}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &899833673174813026 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8850501028898796178, guid: 5414e28d7261a2546841b2e3641b228a,
+    type: 3}
+  m_PrefabInstance: {fileID: 899833673174813024}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

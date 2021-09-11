@@ -277,6 +277,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7760021759251769631}
+  - component: {fileID: 975942480124542375}
   m_Layer: 5
   m_Name: Container Slot Reward
   m_TagString: Untagged
@@ -308,6 +309,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 250, y: 270}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &975942480124542375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2340898760967561985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d929fad83160ac54ab9e7cd47cadace0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _selectedBackground: {fileID: 784088132916433675}
+  _iconCurrency: {fileID: 5002935778123859352}
+  _textDay: {fileID: 7311590373883197231}
+  _countReward: {fileID: 8725820335848217411}
 --- !u!1 &2375353532495866429
 GameObject:
   m_ObjectHideFlags: 0
