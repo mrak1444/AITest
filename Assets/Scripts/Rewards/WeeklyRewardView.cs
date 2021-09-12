@@ -4,20 +4,19 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DailyRewardView : MonoBehaviour
+public class WeeklyRewardView : MonoBehaviour
 {
     private const string CurrentSLotInActiveKey = nameof(CurrentSLotInActiveKey);
     private const string TimeGetRewardKey = nameof(TimeGetRewardKey);
 
-    [SerializeField] private float _timeCooldown = 86400;
-    [SerializeField] private float _timeDeadline = 172800;
-    [SerializeField] private List<Reward> _rewardsDaily;
+    [SerializeField] private float _timeCooldown = 604800;
+    [SerializeField] private float _timeDeadline = 1209600;
+    [SerializeField] private List<Reward> _rewardsWeekly;
     [SerializeField] private TMP_Text _timerNewReward;
-    [SerializeField] private Transform _rootSlotsRewardDaily;
+    [SerializeField] private Transform _rootSlotsRewardWeekly;
     [SerializeField] private ContainerRewardSlotView _containerRewardSlotView;
     [SerializeField] private Button _getRewardButton;
     [SerializeField] private Button _resetButton;
-    [SerializeField] private Image _sliderRewardDaily;
 
     public Button ResetButton => _resetButton;
 
@@ -25,17 +24,15 @@ public class DailyRewardView : MonoBehaviour
 
     public ContainerRewardSlotView ContainerRewardSlotView => _containerRewardSlotView;
 
-    public Transform RootSlotsRewardDaily => _rootSlotsRewardDaily;
+    public Transform RootSlotsRewardWeekly => _rootSlotsRewardWeekly;
 
     public TMP_Text TimerNewReward => _timerNewReward;
 
-    public List<Reward> RewardsDaily => _rewardsDaily;
+    public List<Reward> RewardsWeekly => _rewardsWeekly;
 
     public float TimeDeadline => _timeDeadline;
 
     public float TimeCooldown => _timeCooldown;
-
-    public Image SliderRewardDaily => _sliderRewardDaily;
 
     public int CurrentSLotInActive
     {

@@ -3,16 +3,17 @@ using UnityEngine;
 public class InstalView : MonoBehaviour
 {
     [SerializeField] private DailyRewardView _dailyRewardView;
+    [SerializeField] private WeeklyRewardView _weeklyRewardView;
 
-    private DailyRewardController _dailyRewardController;
+    private RewardController _rewardController;
 
     private void Awake()
     {
-        _dailyRewardController = new DailyRewardController(_dailyRewardView);
+        _rewardController = new RewardController(_dailyRewardView, _weeklyRewardView);
     }
 
     private void Start()
     {
-        _dailyRewardController.RefreshView();
+        _rewardController.RefreshView();
     }
 }

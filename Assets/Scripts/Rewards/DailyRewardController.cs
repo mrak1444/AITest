@@ -8,7 +8,7 @@ public class DailyRewardController
 {
     private DailyRewardView _dailyRewardView;
 
-    private List<ContainerRewardSlotView> _slots = new List<ContainerRewardSlotView>();
+    private List<ContainerRewardSlotView> _slotsDaily = new List<ContainerRewardSlotView>();
 
     private bool _isGetReward;
 
@@ -27,12 +27,12 @@ public class DailyRewardController
 
     private void InitSlots()
     {
-        _slots = new List<ContainerRewardSlotView>();
+        _slotsDaily = new List<ContainerRewardSlotView>();
 
-        for (var i = 0; i < _dailyRewardView.Rewards.Count; i++)
+        for (var i = 0; i < _dailyRewardView.RewardsDaily.Count; i++)
         {
-            var instantSlot = Object.Instantiate(_dailyRewardView.ContainerRewardSlotView, _dailyRewardView.MountRootSlotsReward, false);
-            _slots.Add(instantSlot);
+            var instantSlot = Object.Instantiate(_dailyRewardView.ContainerRewardSlotView, _dailyRewardView.RootSlotsRewardDaily, false);
+            _slotsDaily.Add(instantSlot);
         }
     }
 
@@ -81,14 +81,17 @@ public class DailyRewardController
             {
                 var nextClaimTime = _dailyRewardView.TimeGetReward.Value.AddSeconds(_dailyRewardView.TimeCooldown);
                 var currentClaimCooldown = nextClaimTime - DateTime.UtcNow;
+                
                 var timeGetReward = $"{currentClaimCooldown.Days:D2}:{currentClaimCooldown.Hours:D2}:{currentClaimCooldown.Minutes:D2}:{currentClaimCooldown.Seconds:D2}";
 
                 _dailyRewardView.TimerNewReward.text = $"Time to get the next reward: {timeGetReward}";
+
+                _dailyRewardView.SliderRewardDaily.fillAmount = (float)(1-(currentClaimCooldown.TotalSeconds / 86400));
             }
         }
 
-        for (var i = 0; i < _slots.Count; i++)
-            _slots[i].SetData(_dailyRewardView.Rewards[i], i + 1, i == _dailyRewardView.CurrentSLotInActive);
+        for (var i = 0; i < _slotsDaily.Count; i++)
+            _slotsDaily[i].SetData(_dailyRewardView.RewardsDaily[i], i + 1, i == _dailyRewardView.CurrentSLotInActive);
     }
 
     private void SubscribeButtons()
@@ -102,7 +105,7 @@ public class DailyRewardController
         if (!_isGetReward)
             return;
 
-        var reward = _dailyRewardView.Rewards[_dailyRewardView.CurrentSLotInActive];
+        var reward = _dailyRewardView.RewardsDaily[_dailyRewardView.CurrentSLotInActive];
 
         switch (reward.RewardType)
         {
@@ -115,7 +118,7 @@ public class DailyRewardController
         }
 
         _dailyRewardView.TimeGetReward = DateTime.UtcNow;
-        _dailyRewardView.CurrentSLotInActive = (_dailyRewardView.CurrentSLotInActive + 1) % _dailyRewardView.Rewards.Count;
+        _dailyRewardView.CurrentSLotInActive = (_dailyRewardView.CurrentSLotInActive + 1) % _dailyRewardView.RewardsDaily.Count;
 
         RefreshRewardsState();
     }
