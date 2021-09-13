@@ -81,9 +81,12 @@ public class WeeklyRewardController
             {
                 var nextClaimTime = _weeklyRewardView.TimeGetReward.Value.AddSeconds(_weeklyRewardView.TimeCooldown);
                 var currentClaimCooldown = nextClaimTime - DateTime.UtcNow;
+
                 var timeGetReward = $"{currentClaimCooldown.Days:D2}:{currentClaimCooldown.Hours:D2}:{currentClaimCooldown.Minutes:D2}:{currentClaimCooldown.Seconds:D2}";
 
                 _weeklyRewardView.TimerNewReward.text = $"Time to get the next reward: {timeGetReward}";
+
+                _weeklyRewardView.SliderRewardWeekly.fillAmount = (float)(1 - (currentClaimCooldown.TotalSeconds / _weeklyRewardView.TimeCooldown));
             }
         }
 

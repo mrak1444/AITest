@@ -135,9 +135,6 @@ public class FightWindowView : MonoBehaviour
 
         _countPowerEnemy.text = $"Enemy power: {_enemy.Power}";
 
-        if (_allCountPowerPlayer <= 2)
-            _passByButton.gameObject.SetActive(true);
-        else
-            _passByButton.gameObject.SetActive(false);
+        _passByButton.gameObject.SetActive(_allCountPowerPlayer <= 2);
     }
 }

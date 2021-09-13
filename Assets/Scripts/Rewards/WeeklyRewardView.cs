@@ -6,8 +6,8 @@ using UnityEngine.UI;
 
 public class WeeklyRewardView : MonoBehaviour
 {
-    private const string CurrentSLotInActiveKey = nameof(CurrentSLotInActiveKey);
-    private const string TimeGetRewardKey = nameof(TimeGetRewardKey);
+    private const string CurrentSLotInActiveKeyWeekly = nameof(CurrentSLotInActiveKeyWeekly);
+    private const string TimeGetRewardKeyWeekly = nameof(TimeGetRewardKeyWeekly);
 
     [SerializeField] private float _timeCooldown = 604800;
     [SerializeField] private float _timeDeadline = 1209600;
@@ -17,6 +17,7 @@ public class WeeklyRewardView : MonoBehaviour
     [SerializeField] private ContainerRewardSlotView _containerRewardSlotView;
     [SerializeField] private Button _getRewardButton;
     [SerializeField] private Button _resetButton;
+    [SerializeField] private Image _sliderRewardWeekly;
 
     public Button ResetButton => _resetButton;
 
@@ -34,17 +35,19 @@ public class WeeklyRewardView : MonoBehaviour
 
     public float TimeCooldown => _timeCooldown;
 
+    public Image SliderRewardWeekly => _sliderRewardWeekly;
+
     public int CurrentSLotInActive
     {
-        get => PlayerPrefs.GetInt(CurrentSLotInActiveKey, 0);
-        set => PlayerPrefs.SetInt(CurrentSLotInActiveKey, value);
+        get => PlayerPrefs.GetInt(CurrentSLotInActiveKeyWeekly, 0);
+        set => PlayerPrefs.SetInt(CurrentSLotInActiveKeyWeekly, value);
     }
 
     public DateTime? TimeGetReward
     {
         get
         {
-            var data = PlayerPrefs.GetString(TimeGetRewardKey, null);
+            var data = PlayerPrefs.GetString(TimeGetRewardKeyWeekly, null);
             if (!string.IsNullOrEmpty(data))
                 return DateTime.Parse(data);
 
@@ -53,9 +56,9 @@ public class WeeklyRewardView : MonoBehaviour
         set
         {
             if (value != null)
-                PlayerPrefs.SetString(TimeGetRewardKey, value.ToString());
+                PlayerPrefs.SetString(TimeGetRewardKeyWeekly, value.ToString());
             else
-                PlayerPrefs.DeleteKey(TimeGetRewardKey);
+                PlayerPrefs.DeleteKey(TimeGetRewardKeyWeekly);
         }
     }
 

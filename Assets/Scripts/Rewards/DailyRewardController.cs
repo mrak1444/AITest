@@ -86,7 +86,7 @@ public class DailyRewardController
 
                 _dailyRewardView.TimerNewReward.text = $"Time to get the next reward: {timeGetReward}";
 
-                _dailyRewardView.SliderRewardDaily.fillAmount = (float)(1-(currentClaimCooldown.TotalSeconds / 86400));
+                _dailyRewardView.SliderRewardDaily.fillAmount = (float)(1-(currentClaimCooldown.TotalSeconds / _dailyRewardView.TimeCooldown));
             }
         }
 
