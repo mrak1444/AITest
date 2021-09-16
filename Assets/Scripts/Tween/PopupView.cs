@@ -8,6 +8,11 @@ public class PopupView : MonoBehaviour
 
     [SerializeField] private float _duration = 0.3f;
 
+    [SerializeField] private Color _colorOpenPopUp;
+    [SerializeField] private Color _colorClosePopUp;
+
+    [SerializeField] private Image _image;
+
     private void Start()
     {
         _buttonClosePopup.onClick.AddListener(HidePopup);
@@ -33,8 +38,8 @@ public class PopupView : MonoBehaviour
     private void AnimationShow()
     {
         var sequence = DOTween.Sequence();
-
         sequence.Insert(0.0f, transform.DOScale(Vector3.one, _duration));
+        sequence.Insert(0.2f, _image.DOColor(_colorOpenPopUp, _duration));
         sequence.OnComplete(() =>
         {
             sequence = null;
@@ -45,7 +50,9 @@ public class PopupView : MonoBehaviour
     {
         var sequence = DOTween.Sequence();
 
-        sequence.Insert(0.0f, transform.DOScale(Vector3.zero, _duration));
+        sequence.Insert(0.0f, _image.DOColor(_colorClosePopUp, _duration));
+        sequence.Insert(0.2f, transform.DOScale(Vector3.zero, _duration));
+
         sequence.OnComplete(() =>
         {
             sequence = null;

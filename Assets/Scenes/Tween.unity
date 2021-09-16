@@ -373,7 +373,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.30588236}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1799,6 +1799,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _buttonClosePopup: {fileID: 1739390201}
   _duration: 0.3
+  _colorOpenPopUp: {r: 1, g: 1, b: 1, a: 0.32156864}
+  _colorClosePopUp: {r: 1, g: 1, b: 1, a: 0}
+  _image: {fileID: 170531001}
 --- !u!1 &1854782786
 GameObject:
   m_ObjectHideFlags: 0
