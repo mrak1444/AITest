@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Push.unity
+    guid: 8e2e545fe240abd4d99b4be0a31b405a
+  m_configObjects:
+    com.unity.addressableassets: {fileID: 11400000, guid: 7160fd1340b80e345bc3295790bac218,
+      type: 2}
+    com.unity.localization.settings: {fileID: 11400000, guid: 426913fb3ae5b364fab6d40b5b29899b,
+      type: 2}

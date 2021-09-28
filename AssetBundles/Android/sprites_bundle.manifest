@@ -1,0 +1,21 @@
+ManifestFileVersion: 0
+CRC: 1100647708
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: bbf3c229824781e475587bb238d67c64
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 4df8c69f2c8a6ad9e3cbf82bb83e4dc3
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Sprites/Resource Vector Graphics/UI_Graphic_Resource_Gems.png
+- Assets/Sprites/Resource Vector Graphics/UI_Graphic_Resource_Food.png
+- Assets/Sprites/Resource Vector Graphics/UI_Graphic_Resource_Wood.png
+Dependencies: []
